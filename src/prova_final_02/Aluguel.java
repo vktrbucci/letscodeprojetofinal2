@@ -42,13 +42,13 @@ public class Aluguel {
     
     @Override
     public String toString() {
-    	// TODO Auto-generated method stub
-    	return String.format("Veículo:                  %s\n"
-    			+ "Valor da diária:          R$ %.2f\n"
-    			+ "Quantidade de dias:       %d\n"
-    			+ "Valor do aluguel:         R$ %.2f\n"
-    			+ "Desconto aplicado:        R$ %.2f\n"
-    			+ "Valor final com desconto: R$ %.2f",
+    	return String.format(
+                  "Veículo:                  %s\n"
+    			+ "Valor da diária:          R$ %7.2f\n"
+    			+ "Quantidade de dias:          %4d\n"
+    			+ "Valor do aluguel:         R$ %7.2f\n"
+    			+ "Desconto aplicado:        R$ %7.2f\n"
+    			+ "Valor final com desconto: R$ %7.2f",
     			this.veiculo, this.veiculo.getValorDiario(), this.dias,
     			this.getValorAluguel().doubleValue(), this.getValorDesconto().doubleValue(),
     			this.valorAluguelComDesconto.doubleValue());
