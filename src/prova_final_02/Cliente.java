@@ -4,12 +4,27 @@ import java.math.BigDecimal;
 
 public abstract class Cliente {
 	
-	private BigDecimal percentualDesconto;
-	
-	public Cliente(String percentualDesconto) {
+	final private BigDecimal percentualDesconto;
+	final private int minimoDias;
+
+	public Cliente(final String percentualDesconto, final int minimoDias) {
 		this.percentualDesconto = new BigDecimal(percentualDesconto);
+		this.minimoDias = minimoDias;
 	}
 
-	public abstract BigDecimal getDesconto(int dias);
+	public BigDecimal getPercentualDesconto() {
+		return percentualDesconto;
+	}
+
+	public int getMinimoDias() {
+		return minimoDias;
+	}
+
+	public BigDecimal getDesconto(int dias) {
+		if (dias > this.getMinimoDias()) {
+			return this.getPercentualDesconto();			
+		}
+		return new BigDecimal("0.00");
+	}
 	
 }
